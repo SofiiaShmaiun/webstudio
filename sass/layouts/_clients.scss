@@ -1,0 +1,46 @@
+.clients__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  @include desktop {
+    flex-wrap: nowrap;
+  }
+}
+
+.clients__item {
+  width: 210px;
+  height: 92px;
+
+  @include tablet {
+    width: 226px;
+  }
+
+  @include desktop {
+    width: 170px;
+  }
+}
+
+.clients__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  background-color: transparent;
+  border: 1px solid $icon-color;
+  border-radius: 4px;
+  fill: $icon-color;
+
+  transition-property: fill, border;
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $accent-color;
+    fill: $accent-color;
+  }
+}

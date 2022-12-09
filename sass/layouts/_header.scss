@@ -1,0 +1,156 @@
+.page-header {
+  border-bottom: 1px solid #ececec;
+}
+
+.contacts {
+  display: none;
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-left: auto;
+    padding: 21px 0;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    gap: 40px;
+
+    padding: 32px 0;
+  }
+
+  &.menu-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+.contacts__link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  font-weight: 500;
+  font-size: 24px; //34px
+  line-height: calc(28 / 24); //calc(40 / 34)
+  letter-spacing: 0.02em;
+  color: $primary-text-color;
+
+  transition-property: color;
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  @include tablet {
+    font-size: 12px;
+    line-height: calc(14 / 12);
+  }
+
+  @include desktop {
+    font-size: 14px;
+    line-height: calc(16 / 14);
+  }
+}
+
+.contacts__icon {
+  @include tablet {
+    margin-right: 8px;
+
+    fill: currentColor;
+    &.envelope {
+      width: 14px;
+      height: 10px;
+    }
+    &.telephone {
+      width: 10px;
+      height: 14px;
+    }
+  }
+
+  @include desktop {
+    margin-right: 10px;
+
+    fill: currentColor;
+    &.envelope {
+      width: 16px;
+      height: 12px;
+    }
+    &.telephone {
+      width: 10px;
+      height: 16px;
+    }
+  }
+}
+
+/* menu styles */
+
+.menu {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: $primary-white;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  > .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+  }
+  @include tablet {
+    display: none;
+  }
+}
+
+.menu__icon {
+  fill: $secondary-text-color;
+
+  transition-property: fill;
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
+}
+
+.menu__open {
+  background-color: transparent;
+  border-color: transparent;
+  padding: 10px 0;
+
+  margin-left: 0;
+
+  &:hover .menu__icon,
+  &:focus .menu__icon {
+    fill: $accent-color;
+  }
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.menu__close {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.menu__list {
+}
+.menu__link {
+}
+
+.soc-media {
+}
+.soc-media__item {
+}
+.soc-media__link {
+}
