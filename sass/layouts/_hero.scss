@@ -4,6 +4,7 @@
 }
 
 .hero-container {
+  max-width: 100%;
   padding-top: 118px;
   padding-bottom: 118px;
 
@@ -11,8 +12,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-
-  max-width: 100%;
 
   background-image: $hero-bg, url(../../images/hero-mob.jpg);
   @include retina {
@@ -27,8 +26,6 @@
   }
 
   @include tablet {
-    max-width: 100%;
-
     background-image: $hero-bg, url(../../images/hero.jpg);
     @include retina {
       background-image: $hero-bg, url(../../images/hero@2x.jpg);
@@ -36,7 +33,7 @@
   }
 
   @include desktop {
-    width: 1200px;
+    min-width: 1200px;
     padding-top: 200px;
     padding-bottom: 200px;
   }

@@ -5,6 +5,10 @@
   @include desktop {
     padding-top: 94px;
     padding-bottom: 94px;
+
+    &.features-section {
+      padding-bottom: 0;
+    }
   }
 }
 
