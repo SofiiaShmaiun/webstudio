@@ -2,13 +2,13 @@
   padding-top: 60px;
   padding-bottom: 60px;
 
+  &.features-section {
+    padding-bottom: 0;
+  }
+
   @include desktop {
     padding-top: 94px;
     padding-bottom: 94px;
-
-    &.features-section {
-      padding-bottom: 0;
-    }
   }
 }
 

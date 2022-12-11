@@ -17,11 +17,17 @@
   @include retina {
     background-image: $hero-bg, url(../../images/hero-mob@2x.jpg);
   }
+  @include retina3x {
+    background-image: $hero-bg, url(../../images/hero-mob@3x.jpg);
+  }
 
   @include mobile {
     background-image: $hero-bg, url(../../images/hero-tab.jpg);
     @include retina {
       background-image: $hero-bg, url(../../images/hero-tab@2x.jpg);
+    }
+    @include retina3x {
+      background-image: $hero-bg, url(../../images/hero-tab@3x.jpg);
     }
   }
 
@@ -30,10 +36,13 @@
     @include retina {
       background-image: $hero-bg, url(../../images/hero@2x.jpg);
     }
+    @include retina3x {
+      background-image: $hero-bg, url(../../images/hero@3x.jpg);
+    }
   }
 
   @include desktop {
-    min-width: 1200px;
+    max-width: 1600px;
     padding-top: 200px;
     padding-bottom: 200px;
   }
