@@ -46,11 +46,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: auto;
   }
 
   &.is-open {
     visibility: visible;
-    overflow: auto;
   }
 }
 
