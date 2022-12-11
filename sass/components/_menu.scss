@@ -5,12 +5,14 @@
   transition-duration: $duration;
   transition-timing-function: $timing-function;
 }
+
 .menu-toggle {
+  position: absolute;
+  top: 0;
+  right: 15px;
+
   min-height: 40px;
   min-width: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   padding: 10px 0;
   margin-left: 0;
@@ -21,10 +23,8 @@
   &:focus .menu-toggle__icon {
     fill: $accent-color;
   }
-}
 
-@include tablet {
-  .menu-toggle {
+  @include tablet {
     display: none;
   }
 }
@@ -38,32 +38,87 @@
   padding: 48px 40px;
   background-color: $primary-white;
   z-index: 100;
-  transform: translateX(100%);
+  visibility: hidden;
 
-  transition-property: transform;
-  transition-duration: $duration;
-  transition-timing-function: $timing-function;
+  &__container {
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-  .menu-toggle {
-    position: absolute;
-    top: 0;
-    right: 15px;
+  &.is-open {
+    visibility: visible;
+    overflow: auto;
   }
 }
 
-.menu.is-open {
-  transform: translateX(0);
-}
-
-// soc-media styles
-
-.soc-media {
-  padding-bottom: 48px;
+.menu-links {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 32px;
 }
 
-.soc-media__item {
+.menu-links__link {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: calc(47 / 40);
+  letter-spacing: 0.02em;
+  color: $secondary-text-color;
+
+  transition-property: color;
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
+
+  &:hover,
+  &:focus,
+  &--current {
+    color: $accent-color;
+  }
+}
+
+.menu-contacts {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 32px;
+}
+
+.menu-contacts__link {
+  &--address,
+  &--phone-number {
+    display: flex;
+    align-items: center;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: calc(28 / 24);
+    letter-spacing: 0.02em;
+    color: $primary-text-color;
+
+    transition-property: color;
+    transition-duration: $duration;
+    transition-timing-function: $timing-function;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+  }
+  &--phone-number {
+    font-size: 34px;
+    line-height: calc(40 / 34);
+    color: $accent-color;
+  }
+}
+
+.menu-socials {
+  max-width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.menu-socials__item {
   padding-right: 10px;
   border-right: 1px solid rgba(33, 33, 33, 0.2);
 
@@ -73,7 +128,9 @@
   }
 }
 
-.soc-media__link {
+.menu-socials__link {
+  max-width: 100%;
+  display: block;
   font-weight: 500;
   font-size: 18px;
   line-height: calc(22 / 18);
